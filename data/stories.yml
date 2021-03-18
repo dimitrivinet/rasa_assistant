@@ -1,0 +1,34 @@
+version: "2.0"
+stories:
+- story: greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: write_happy
+  steps:
+  - intent: write_text
+    entities:
+    - to_write: dummy
+  - action: utter_ask_write_confirmation
+  - intent: affirm
+  - action: utter_write_confirmation
+- story: write_sad
+  steps:
+  - intent: write_text
+    entities:
+    - to_write: dummy
+  - action: utter_ask_write_confirmation
+  - intent: deny
+  - action: utter_accept_deny
+- story: grab_happy
+  steps:
+  - intent: grab
+    entities:
+    - known_object: boite
+  - action: utter_grab_confirmation
+- story: grab_sad
+  steps:
+  - intent: grab
+    entities:
+    - unknown_object: ordinateur
+  - action: utter_grab_fail

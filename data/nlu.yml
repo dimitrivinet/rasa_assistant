@@ -1,0 +1,95 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Bonjour
+    - salut
+    - hey
+    - yo
+    - ello
+    - lu
+    - bonsoir
+    - wesh
+    - bonjour
+    - bonjour alfred
+    - salut alfred
+    - hello alfred
+- intent: bot_challenge
+  examples: |
+    - es tu un bot?
+    - est ce que je parle à un humain ?
+    - es tu un humain ?
+    - je parle à un bot ?
+    - es tu doué de conscience ?
+    - es tu conscient ?
+    - es tu une IA ?
+    - qui t'a créé ?
+    - qui est ton créateur ?
+    - Qui est ton créateur ?
+    - es tu un bot ?
+- intent: write_text
+  examples: |
+    - ecris [un truc](to_write)
+    - je veux que tu écrives [du texte](to_write)
+    - ecris moi [ce que tu veux](to_write)
+    - je veux que tu écrives [un truc](to_write)
+    - ecris [bonjour](to_write)
+    - ecris moi [satisfaisant](to_write)
+    - ecris [satisfaisant](to_write)
+    - ecris moi [satisaisant](to_write)
+    - ecris moi [ibm](to_write)
+    - ecris moi [abcdefg](to_write)
+    - ecris moi [alphabet](to_write)
+    - je veux que tu écrives [corde](to_write)
+    - ecris [bateau](to_write)
+    - ecris [banane](to_write)
+    - ecris [giraffe](to_write)
+    - ecris [truc](to_write)
+    - ecris moi [quelque chose](to_write)
+    - ecris un [truc](to_write)
+    - ok alfred, ecris [bonjour je suis alfred](to_write)
+    - ecris [bonjour je suis alfred](to_write)
+    - ecris [salut](to_write)
+    - ecris [bienvenue au divc](to_write)
+    - ecris [li](to_write)
+    - ecris [la](to_write)
+    - ecris [le](to_write)
+    - ecris [au](to_write)
+    - ecris [un](to_write) long mot
+    - ecris [anticonstitutionnellement](to_write)
+    - ecris [bienvenue](to_write)
+    - ecris [dimitri](to_write)
+    - ecris [des choses](to_write)
+    - ecris [thomas](to_write)
+    - ecris [robot](to_write)
+- intent: affirm
+  examples: |
+    - oui
+    - c'est ca
+    - s'il te plait
+    - ouais
+    - bien sur
+    - c est ce que j ai dit
+- intent: deny
+  examples: |
+    - non
+    - stop
+    - pas du tout
+    - t'as rien compris
+    - nope
+    - autre chose
+- intent: grab
+  examples: |
+    - peux tu attraper la [canette](known_object)?
+    - peux tu attraper l'[ordinateur](unknown_object) ?
+    - attrape moi la [voiture](unknown_object)
+    - attrape la [boite](known_object)
+    - attrape la [boule](known_object)
+    - attrape la [balle](known_object)
+    - attrape le [bateau](unknown_object)
+    - attrape le [stylo](unknown_object)
+    - attrape la [caneette](known_object)
+    - attrape la [canette](known_object)
+    - attrape moi la [bouteille](known_object)
+    - attrape moi l'[ordinateur](unknown_object)
+    - attrape la [voiture](unknown_object)

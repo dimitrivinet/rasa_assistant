@@ -1,0 +1,61 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: []
+- bot_challenge:
+    use_entities: []
+- write_text:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- grab:
+    use_entities: true
+entities:
+- to_write
+- known_object
+- unknown_object
+slots:
+  to_write:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: ''
+    auto_fill: true
+    influence_conversation: true
+  known_object:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: ''
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - canette
+    - boite
+    - boule
+  unknown_object:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: ''
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: "#101 Bonjour. Je suis A.L.F.R.E.D. l'assistant du DVIC."
+  utter_iamabot:
+  - text: '#101 Je suis un bot, powered by Rasa, créé par Dimitri.'
+  utter_write_confirmation:
+  - text: '#201 Entendu, je vais écrire "{to_write}"'
+  utter_ask_write_confirmation:
+  - text: '#101 Voulez-vous écrire "{to_write}" ?'
+  utter_accept_deny:
+  - text: '#101 Mes excuses.'
+  utter_grab_confirmation:
+  - text: '#202 Bien sûr. Je vous attrape votre {known_object}'
+  utter_grab_fail:
+  - text: '#101 Je ne connais pas cet objet.'
+actions: []
+forms: {}
+e2e_actions: []
